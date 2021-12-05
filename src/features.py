@@ -78,4 +78,27 @@ def apply_features(df):
   Takes in a raw dataframe from etl.py and 
   applys all the custom features into one dataframe
   """
+  df['max_packet_size'] = df['packet_sizes'].apply(max_size)
+  df['range_packet_size'] = df['packet_sizes'].apply(range_ssize)
+  df['avg_packet_size'] = df['packet_sizes'].apply(avg_size)
+  df['longest_packet_dur'] = df['packet_times'].apply(packet_dur)
+  df['total_packet_dir'] = df['packet_dirs'].apply(total_packet_dir)
+  df['total_packets'] = df['1->2Pkts'] + df['2->1Pkts']
+  df['total_bytes'] = df['1->2Bytes'] + df['2->1Bytes']
+  df['interaction_length'] = df['packet_times'].apply(interaction_length)
+  df['packets_time_ratio'] = df['totalPackets'] / df['longest_packet_dur']
+  df['bytes_time_ratio'] = df['totalBytes'] / df['longest_packet_dur']
   
+    def modify(x):
+      """
+      Helper function for features 9 and 10
+      """
+      if x == float('inf'):
+        return 0
+      else:
+        return x
+      
+  df['packets_time_ratio'] = df['packets_time_ratio'].apply(modify)
+  df['bytes_time_ratio'] = df['bytes_time_ratio'].apply(modify)
+  
+  return df
