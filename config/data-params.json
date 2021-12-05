@@ -1,3 +1,4 @@
 {
-    "rawdir": "/data/raw/"
+    "rawdir": "/data/raw/",
+    "test_size": 0.33
 }
