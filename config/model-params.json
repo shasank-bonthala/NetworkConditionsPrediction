@@ -6,10 +6,11 @@
   },
   
   "ridge_regressor": {
-    "alpha": 1.0,
-    "fit_intercept": 1,
-    "copy_X": 1,
-    "max_iter": 99999999999999,
-    "tol": 0.001
+    "n_iter": 300,
+    "tol": 0.001,
+    "alpha_1": 0.000001,
+    "alpha_2": 0.000001,
+    "lambda_1": 0.000001,
+    "lambda_2": 0.000001
   }
 }
