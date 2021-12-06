@@ -1,3 +1,12 @@
 {
-  features: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  feature_1: 1,
+  feature_2: 1,
+  feature_3: 1,
+  feature_4: 1,
+  feature_5: 1,
+  feature_6: 1,
+  feature_7: 1,
+  feature_8: 1,
+  feature_9: 1,
+  feature_10: 1
 }
