@@ -22,6 +22,8 @@ def model_build(features,truth,tag,test_size,**params):
     
  mdl.fit(X_train, y_train)
  preds = mdl.predict(X_test)
- out = pd.concat([pd.Series(preds), pd.Series(y_test)], axis=1)
+ dict1 = {'preds': preds, 'truth': y_test}
+ out = pd.DataFrame(dict1)
+ 
   
  return out #returns a pandas df
