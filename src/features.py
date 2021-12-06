@@ -86,8 +86,8 @@ def apply_features(df):
   df['total_packets'] = df['1->2Pkts'] + df['2->1Pkts']
   df['total_bytes'] = df['1->2Bytes'] + df['2->1Bytes']
   df['interaction_length'] = df['packet_times'].apply(interaction_length)
-  df['packets_time_ratio'] = df['totalPackets'] / df['longest_packet_dur']
-  df['bytes_time_ratio'] = df['totalBytes'] / df['longest_packet_dur']
+  df['packets_time_ratio'] = df['total_packets'] / df['longest_packet_dur']
+  df['bytes_time_ratio'] = df['total_bytes'] / df['longest_packet_dur']
   
   def modify(x):
     if x == float('inf'):
