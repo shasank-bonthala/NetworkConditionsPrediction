@@ -1,1 +1,8 @@
-
+{
+    "config": ["config/data-params.json", "config/feature-params.json", "config/model-params.json"],
+    "build": "run.py",
+    "library": ["src"],
+    "notebook": ["notebooks/EDA.ipynb"],
+    "targets": ["data", "eda", "tuning", "generate", "test", "all"],
+    "dockerhub-id": "shasank-bonthala/chp2:latest"
+}
