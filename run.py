@@ -35,6 +35,25 @@ def main():
   data = load_data(datalist)
   data = apply_features(data)
   
+  with open('config/model-params.json') as fh:
+    data_cfg = json.load(fh)
+    
+  X = data[['1->2Bytes', '2->1Bytes', '1->2Pkts', '2->1Pkts', 'max_packet_size', 
+               'range_packet_size', 'avg_packet_size', 'longest_packet_dur', 'total_packet_dir',
+               'total_packets', 'total_bytes', 'interaction_length', 'bytes_time_ratio', 'packets_time_ratio']]
+  y = data.packet_loss_ratio
+  y1 = data.latency
+  
+  #Packet Loss Predictions
+  packet_loss_out = model_build(X, y, 'packet_loss_ratio', 0.33, **data_cfg['knn_regressor'])
+  
+  #Latency Predictions
+  latency_out = model_build(X, y1, 'latency', 0.33, **data_cfg['ridge_regressor'])
+  
+  packet_loss_out.to_csv('data/out')
+  latency_out.to_csv('data/out')
+  
+  return
   
 if __name__ == '__main__':
     main()
