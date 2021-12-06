@@ -79,7 +79,7 @@ def apply_features(df):
   applys all the custom features into one dataframe
   """
   df['max_packet_size'] = df['packet_sizes'].apply(max_size)
-  df['range_packet_size'] = df['packet_sizes'].apply(range_ssize)
+  df['range_packet_size'] = df['packet_sizes'].apply(range_size)
   df['avg_packet_size'] = df['packet_sizes'].apply(avg_size)
   df['longest_packet_dur'] = df['packet_times'].apply(packet_dur)
   df['total_packet_dir'] = df['packet_dirs'].apply(total_packet_dir)
