@@ -3,7 +3,7 @@
     "n_neighbors": 5,
     "weights": "uniform",
     "algorithm": "auto"
-  }
+  },
   
   "ridge_regressor": {
     "alpha": 1.0,
