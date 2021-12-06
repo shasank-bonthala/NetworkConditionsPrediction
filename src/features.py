@@ -90,9 +90,6 @@ def apply_features(df):
   df['bytes_time_ratio'] = df['totalBytes'] / df['longest_packet_dur']
   
   def modify(x):
-      """
-      Helper function for features 9 and 10
-      """
     if x == float('inf'):
       return 0
     else:
