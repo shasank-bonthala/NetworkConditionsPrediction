@@ -4,10 +4,19 @@ In this project we created two regression models. One is designed to predict the
 
 ## Running the project
 
-* Run the run.py file to train both models on the provided data
-  - Model parameters and input data can be changed in config files
-* Output of models is provided in the data/output/ folder
-  - Output includes model predictions, true values, and model weights
+Clone this repository
+
+git clone https://github.com/shasank-bonthala/NetworkConditionsPrediction.git
+Once cloned, switch directories to inside this repository
+
+Modify target parameters by going to config/
+
+Once you have made all the changes to the configs (you really only need to change the data inputs) run the following command
+
+python run.py 
+If you want to run
+
+Results will be in data/out directory separating out predictions for latency and packet_loss separately.
 
 ### Config files
 
