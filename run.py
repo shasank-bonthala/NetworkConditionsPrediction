@@ -50,8 +50,8 @@ def main():
   #Latency Predictions
   latency_out = model_build(X, y1, 'latency', 0.33, **data_cfg['ridge_regressor'])
   
-  packet_loss_out.to_csv('/data/out/preds_packet_loss.csv')
-  latency_out.to_csv('/data/out/preds_latency.csv')
+  packet_loss_out.to_csv('data/out/preds_packet_loss.csv')
+  latency_out.to_csv('data/out/preds_latency.csv')
   
   return
   
