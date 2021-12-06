@@ -1,15 +1,15 @@
 {
   "knn_regressor": {
     "n_neighbors": 5,
-    "weights": 'uniform',
-    "algorithm": 'auto'
+    "weights": "uniform",
+    "algorithm": "auto"
   }
   
   "ridge_regressor": {
     "alpha": 1.0,
-    "fit_intercept": True,
-    "copy_X": True,
-    "max_iter": None,
+    "fit_intercept": 1,
+    "copy_X": 1,
+    "max_iter": 99999999999999,
     "tol": 0.001
   }
 }
