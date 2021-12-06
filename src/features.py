@@ -10,7 +10,7 @@ def max_size(x):
   """
   nums = x.split(';')[:-1]
   nums_int = list(map(int, nums))
-  return max(numsInt)
+  return max(nums_int)
   
 # Feature 2: Range of Packet Size for each interaction
 def range_size(x):
@@ -19,7 +19,7 @@ def range_size(x):
   """
   nums = x.split(';')[:-1]
   nums_int = list(map(int, nums))
-  return max(numsInt) - min(numsInt)
+  return max(nums_int) - min(nums_int)
   
 # Feature 3: Average of Packet Size for each interaction
 def avg_size(x):
