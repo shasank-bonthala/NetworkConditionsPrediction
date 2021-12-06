@@ -22,7 +22,7 @@ def load_data(datalist):
     
     final_data = final_data.append(data)
     
-   return final_data
+  return final_data
 
 def load_train(datalist):
   """
