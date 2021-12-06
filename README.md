@@ -13,12 +13,12 @@ In this project we created two regression models. One is designed to predict the
 
 * data-params.json
   - rawdir: directory for the raw input data (formatted in DANE style)
-    ^ default = "/data/raw/"
+    * default = "/data/raw/"
   - test_size: the proportion of the data to be used as test data
-    ^ default = 0.33
+    * default = 0.33
 * feature-params.json
   - features: list of which features will be included in the model (1-10)
-    ^ default = [1,2,3,4,5,6,7,8,9,10]
+    * default = [1,2,3,4,5,6,7,8,9,10]
 * model-params.json
   - knn_regressor: controls the hyperparameters for the Packet Loss Ratio Model
   - ridge_regressor: controls the hyperparameters for the Latency Model
