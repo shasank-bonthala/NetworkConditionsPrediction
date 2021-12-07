@@ -30,14 +30,14 @@ def avg_size(x):
   numsInt = list(map(int, nums))
   return np.mean(numsInt)
   
-# Feature 4: Longest Packet Duration
+# Feature 4: Average Packet Duration
 def packet_dur(x):
   """
   Helper function used to add longest packet duration feature
   """
   nums = x.split(';')[:-1]
   numsInt = list(map(int, nums))
-  return max(numsInt) - min(numsInt)
+  return np.mean(np.diff(numsInt))
   
 # Feature 5: Total packet Direction
 def total_packet_dir(x):
