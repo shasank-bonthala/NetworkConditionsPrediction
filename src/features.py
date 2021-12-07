@@ -81,13 +81,13 @@ def apply_features(df):
   df['max_packet_size'] = df['packet_sizes'].apply(max_size)
   df['range_packet_size'] = df['packet_sizes'].apply(range_size)
   df['avg_packet_size'] = df['packet_sizes'].apply(avg_size)
-  df['longest_packet_dur'] = df['packet_times'].apply(packet_dur)
+  df['avg_packet_dur'] = df['packet_times'].apply(packet_dur)
   df['total_packet_dir'] = df['packet_dirs'].apply(total_packet_dir)
   df['total_packets'] = df['1->2Pkts'] + df['2->1Pkts']
   df['total_bytes'] = df['1->2Bytes'] + df['2->1Bytes']
   df['interaction_length'] = df['packet_times'].apply(interaction_length)
-  df['packets_time_ratio'] = df['total_packets'] / df['longest_packet_dur']
-  df['bytes_time_ratio'] = df['total_bytes'] / df['longest_packet_dur']
+  df['packets_time_ratio'] = df['total_packets'] / df['interaction_length']
+  df['bytes_time_ratio'] = df['total_bytes'] / df['interaction_length']
   
   def modify(x):
     if x == float('inf'):
